@@ -47,6 +47,7 @@ function updateUI() {
   $('bExit').style.display = state !== 'title' ? 'block' : 'none';
   const cvis = chatVisible() ? 'flex' : 'none';
   if ($('chat').style.display !== cvis) $('chat').style.display = cvis;
+  voiceUpdate();
   const playing = state === 'serve' || state === 'play';
   for (let i = 0; i < 2; i++) {
     const b = $('ab' + i), p = P[i];

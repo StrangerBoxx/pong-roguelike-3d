@@ -13,6 +13,7 @@ Abre `index.html` en el navegador (no requiere build ni servidor). Para el modo 
 | Pausa      | `P` / `Esc` |              |                                |
 | Silenciar  | `M`       |                |                                |
 | Chat (online) | `T` abre · `Enter` envía · `Esc` cierra | | Pestaña 💬 a la izquierda |
+| Voz (online)  | Clic en 🎤 enciende/apaga · mantener `V` para hablar | | Botón 🎤 · 🔊 silencia al rival |
 
 Reglas: 3 puntos ganan una ronda, 4 rondas ganan la partida. Quien pierde una ronda recibe una carta rara garantizada.
 
@@ -48,6 +49,7 @@ js/
   ui/
     menu.js             Menú HTML, teclado de código, botones táctiles
     chat.js             Chat online plegable con contador de no leídos
+    voice.js            Chat de voz (WebRTC): micrófono, pulsar para hablar, indicador
   render/
     scene3d.js          Escena Three.js (mesa, paletas, bolas, bloom)
     draw-utils.js       Helpers de texto y formas para el canvas 2D

@@ -47,7 +47,11 @@
         <div id="chatLog"></div>
         <div id="chatRow"><input id="chatIn" maxlength="140" placeholder="Escribe un mensaje…" autocomplete="off" spellcheck="false"><button id="chatSend">➤</button></div>
       </div>
-      <button id="chatTab" title="Chat (T)">💬<span id="chatBadge">+1</span></button>
+      <div id="chatSide">
+        <button id="chatTab" title="Chat (T)">💬<span id="chatBadge">+1</span></button>
+        <button id="micBtn" title="Micrófono: clic para encender/apagar · mantén V para hablar">🎤</button>
+        <button id="spkBtn" title="Voz del rival: clic para silenciar">🔊</button>
+      </div>
     </div>
   </div>
 </div>
@@ -72,6 +76,7 @@
 <script src="js/net/lobby.js"></script>
 <script src="js/ui/menu.js"></script>
 <script src="js/ui/chat.js"></script>
+<script src="js/ui/voice.js"></script>
 <script src="js/render/draw-utils.js"></script>
 <script src="js/render/hud.js"></script>
 <script src="js/render/screens.js"></script>
