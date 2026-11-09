@@ -1,6 +1,6 @@
 /**
  * Transporte online sobre PeerJS (WebRTC). El navegador del anfitrión actúa de servidor.
- * Interfaz: join(code, role) -> { presence, peers, leave }.
+ * Interfaz: join(code, role) -> { presence, peers, leave, say, onChat }.
  */
 'use strict';
 
@@ -17,13 +17,19 @@ function makePeerRoom() {
         const send = () => { if (conn && conn.open) { try { conn.send({ t: 'p', p: mine }); } catch (e) {} } };
         const wire = c => {
           conn = c;
-          c.on('data', m => { if (m && m.t === 'p' && m.p && typeof m.p === 'object') { remote = m.p; remoteId = c.peer; } });
+          c.on('data', m => {
+            if (m && m.t === 'p' && m.p && typeof m.p === 'object') { remote = m.p; remoteId = c.peer; }
+            else if (m && m.t === 'c' && typeof m.m === 'string' && room.onChat) room.onChat(m.m.slice(0, 140));
+          });
           c.on('open', send);
           c.on('close', () => { if (conn === c) { conn = null; remote = null; } });
           c.on('error', () => {});
         };
         const room = {
           presence(patch) { mine = Object.assign({}, mine, patch); send(); return Promise.resolve(); },
+          // chat: say() returns false if there is no open connection; set onChat(text) to receive
+          say(text) { if (!conn || !conn.open) return false; try { conn.send({ t: 'c', m: text }); return true; } catch (e) { return false; } },
+          onChat: null,
           peers() {
             const list = [{ peer: myId || 'me', presence: mine, sameTab: true, isMe: true }];
             if (remote && conn && conn.open) list.push({ peer: remoteId, presence: remote, sameTab: false, isMe: false });

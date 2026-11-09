@@ -53,7 +53,7 @@ function drawTitle(dt) {
   text('PONG', W / 2, 78, 64, '#ffffff', 'center', FT, 30);
   text('ROGUELIKE 3D', W / 2, 140, 24, '#ffe66d', 'center', FT, 18);
   text('Gana ' + POINTS + ' puntos por ronda · ' + ROUNDS + ' rondas para ganar · mejoras entre rondas', W / 2, 186, 21, '#c8ccf0', 'center', FB);
-  text('Teclado: J1 W/S + D · J2 ↑/↓ + ← · Táctil: arrastra para mover, botón redondo = habilidad', W / 2, 584, 18, '#8f96c8', 'center', FB);
+  text('Teclado: Azul W/S + D · Rosa ↑/↓ + ← · Táctil: arrastra para mover, botón redondo = habilidad', W / 2, 584, 18, '#8f96c8', 'center', FB);
 }
 function drawMatchEnd() {
   ctx.fillStyle = 'rgba(4,4,14,0.85)'; ctx.fillRect(0, 0, W, H);

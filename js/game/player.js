@@ -6,7 +6,7 @@
 function mkPlayer(i) {
   return { i, x: i ? W - 36 : 36, y: H / 2, w: 14, h: 100, speed: 520, vy: 0, score: 0, rounds: 0,
     lv: {}, active: null, cd: 0, cdMax: 1, frozen: 0, dashT: 0, dashDir: 0, wallT: 0, smash: false,
-    shield: 0, color: COLORS[i], name: 'JUGADOR ' + (i + 1), hitT: 0 };
+    shield: 0, color: COLORS[i], name: PLAYER_NAMES[i], hitT: 0 };
 }
 function recalc() {
   for (const p of P) {

@@ -6,12 +6,13 @@ Pong para dos jugadores con progresión roguelike: entre rondas cada jugador eli
 
 Abre `index.html` en el navegador (no requiere build ni servidor). Para el modo online ambos jugadores necesitan conexión a internet.
 
-| Acción     | Jugador 1 | Jugador 2      | Táctil                         |
+| Acción     | Azul      | Rosa           | Táctil                         |
 |------------|-----------|----------------|--------------------------------|
 | Mover      | `W` / `S` | `↑` / `↓`      | Arrastrar en tu mitad          |
 | Habilidad  | `D`       | `←` / `Enter`  | Botón redondo                  |
 | Pausa      | `P` / `Esc` |              |                                |
 | Silenciar  | `M`       |                |                                |
+| Chat (online) | `T` abre · `Enter` envía · `Esc` cierra | | Pestaña 💬 a la izquierda |
 
 Reglas: 3 puntos ganan una ronda, 4 rondas ganan la partida. Quien pierde una ronda recibe una carta rara garantizada.
 
@@ -46,6 +47,7 @@ js/
     lobby.js            Crear / unirse / salir de salas
   ui/
     menu.js             Menú HTML, teclado de código, botones táctiles
+    chat.js             Chat online plegable con contador de no leídos
   render/
     scene3d.js          Escena Three.js (mesa, paletas, bolas, bloom)
     draw-utils.js       Helpers de texto y formas para el canvas 2D

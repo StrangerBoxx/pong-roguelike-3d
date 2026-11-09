@@ -6,3 +6,4 @@
 const W = 960, H = 600, POINTS = 3, ROUNDS = 4;
 
 const COLORS = ['#2de2e6', '#ff3d81'];
+const PLAYER_NAMES = ['AZUL', 'ROSA'];

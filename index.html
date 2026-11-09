@@ -41,6 +41,14 @@
     <button class="ab" id="ab0"></button>
     <button class="ab" id="ab1"></button>
     <button id="bExit">✕ MENÚ</button>
+    <div id="chat">
+      <div id="chatPanel">
+        <div id="chatHead">CHAT <span>T abrir · Esc cerrar</span></div>
+        <div id="chatLog"></div>
+        <div id="chatRow"><input id="chatIn" maxlength="140" placeholder="Escribe un mensaje…" autocomplete="off" spellcheck="false"><button id="chatSend">➤</button></div>
+      </div>
+      <button id="chatTab" title="Chat (T)">💬<span id="chatBadge">+1</span></button>
+    </div>
   </div>
 </div>
 <div id="rot"><div class="big">📱↻</div><div>GIRA EL CELULAR<br>PARA JUGAR EN HORIZONTAL</div><button id="bRot">jugar así igual</button></div>
@@ -63,6 +71,7 @@
 <script src="js/net/netcode.js"></script>
 <script src="js/net/lobby.js"></script>
 <script src="js/ui/menu.js"></script>
+<script src="js/ui/chat.js"></script>
 <script src="js/render/draw-utils.js"></script>
 <script src="js/render/hud.js"></script>
 <script src="js/render/screens.js"></script>

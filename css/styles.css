@@ -38,3 +38,33 @@ body{touch-action:none;-webkit-user-select:none;user-select:none;-webkit-tap-hig
 .kbar{display:flex;gap:calc(var(--u)*12px)}
 .kbar button{padding:0 calc(var(--u)*20px);font-size:calc(var(--u)*13px)}
 .kbar #kOk{border-color:#ff3d81;box-shadow:0 0 12px #ff3d8155}
+
+/* ---------- chat (online) ---------- */
+#chat{position:absolute;left:0;top:calc(var(--u)*56px);display:none;align-items:flex-start;pointer-events:none;z-index:4;
+  transform:translateX(calc(var(--u)*-300px));transition:transform .22s ease}
+#chat.open{transform:none}
+#chatPanel{width:calc(var(--u)*300px);height:calc(var(--u)*370px);display:flex;flex-direction:column;box-sizing:border-box;
+  background:rgba(8,8,26,.97);border:2px solid #2de2e6;border-left:none;border-radius:0 calc(var(--u)*10px) calc(var(--u)*10px) 0;
+  box-shadow:0 0 18px #2de2e633;pointer-events:auto;visibility:hidden;transition:visibility 0s .22s}
+#chat.open #chatPanel{visibility:visible;transition:none}
+#chatHead{font-family:'Press Start 2P',monospace;font-size:calc(var(--u)*10px);color:#ffe66d;padding:calc(var(--u)*10px) calc(var(--u)*12px);
+  border-bottom:1px solid #2a2f66;display:flex;justify-content:space-between;align-items:center}
+#chatHead span{font-family:'VT323',monospace;font-size:calc(var(--u)*16px);color:#6f76a8}
+#chatLog{flex:1;overflow-y:auto;padding:calc(var(--u)*8px) calc(var(--u)*12px);font-size:calc(var(--u)*20px);line-height:1.1;overflow-wrap:anywhere;
+  -webkit-user-select:text;user-select:text}
+.cmsg{margin-bottom:calc(var(--u)*6px);color:#e8e8ff}
+.cmsg b{font-weight:normal}
+.cmsg.sys{color:#ff8a5c;font-style:italic}
+#chatRow{display:flex;gap:calc(var(--u)*6px);padding:calc(var(--u)*8px);border-top:1px solid #2a2f66}
+#ui #chatIn{flex:1;min-width:0;font-family:'VT323',monospace;font-size:calc(var(--u)*20px);padding:calc(var(--u)*6px) calc(var(--u)*8px);
+  background:rgba(20,20,50,.95);color:#fff;border:1px solid #555a90;border-radius:calc(var(--u)*6px);outline:none;
+  -webkit-user-select:text;user-select:text;touch-action:manipulation}
+#ui #chatIn:focus{border-color:#2de2e6}
+#chatSend{font-size:calc(var(--u)*14px);padding:0 calc(var(--u)*12px);background:#2de2e6;color:#04040c;border:none;border-radius:calc(var(--u)*6px);cursor:pointer}
+#chatTab{position:relative;margin-top:calc(var(--u)*8px);width:calc(var(--u)*46px);height:calc(var(--u)*46px);font-family:sans-serif!important;
+  font-size:calc(var(--u)*22px);background:rgba(20,20,50,.85);border:2px solid #2de2e6;border-left:none;
+  border-radius:0 calc(var(--u)*10px) calc(var(--u)*10px) 0;cursor:pointer;color:#fff;touch-action:manipulation}
+#chatBadge{position:absolute;top:calc(var(--u)*-8px);right:calc(var(--u)*-12px);display:none;min-width:calc(var(--u)*14px);
+  font-family:'Press Start 2P',monospace;font-size:calc(var(--u)*9px);padding:calc(var(--u)*5px) calc(var(--u)*6px);
+  background:#ff3d81;color:#fff;border-radius:999px;box-shadow:0 0 10px #ff3d81;animation:cbpop .9s ease-in-out infinite alternate}
+@keyframes cbpop{from{transform:scale(1)}to{transform:scale(1.15)}}
